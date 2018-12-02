@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>第四次练习</title>
+    <style type= "text/css">
+
+    .button{
+        width: 50px;
+        height: 40px;
+    }
+    #my{
+        transition-duration: 3s;
+        -webkit-transition-duration: 3s;
+    }
+   
+
+    </style>       
+       
+    </head>
+    <body>
+        
+        <input type = "button" value="右移" id="right" />
+        <input type = "button" value="左移" id="left" />
+        <input type = "button" value="上移" id="up"/>
+        <input type = "button" value="下移" id="down"/>
+        <input type = "button" value="放大" id="big"/>
+        <input type = "button" value="缩小" id="small"/>
+
+        <script>
+           
+            var div=document.createElement("div");
+            div.id = "my";
+            document.body.appendChild(div);
+            document.getElementById("my").style.left= "500px";
+            document.getElementById("my").style.top="200px";
+            document.getElementById("my").style.width="200px";
+            document.getElementById("my").style.height="200px";
+            document.getElementById("my").style.backgroundColor="pink";
+            document.getElementById("my").style.position="absolute";
+            var button1 = document.getElementById("left");
+            button1.addEventListener('click', function() {
+            var my = document.getElementById("my");
+            my.style.left= (parseInt(my.style.left) - 100) + "px";
+            }, false);
+            var button2 = document.getElementById("right");
+            button2.addEventListener('click', function() {
+            var my = document.getElementById("my");
+            my.style.left= (parseInt(my.style.left) + 100) + "px";
+            }, false);
+            var button3 = document.getElementById("up");
+            button3.addEventListener('click', function() {
+            var my = document.getElementById("my");
+            my.style.top= (parseInt(my.style.top) - 100) + "px";
+            }, false);
+            var button4 = document.getElementById("down");
+            button4.addEventListener('click', function() {
+            var my = document.getElementById("my");
+            my.style.top= (parseInt(my.style.top) + 100) + "px";
+            }, false);
+            var button5 = document.getElementById("big");
+            button5.addEventListener('click', function() {
+            var my = document.getElementById("my");
+            my.style.width= (parseInt(my.style.width) + 50) + "px";
+            my.style.height=(parseInt(my.style.height) + 50) + "px";
+            }, false);
+            var button6 = document.getElementById("small");
+            button6.addEventListener('click', function() {
+            var my = document.getElementById("my");
+            my.style.width= (parseInt(my.style.width) - 50) + "px";
+            my.style.height= (parseInt(my.style.height) - 50) + "px";
+            }, false);
+
+            
+        
+        </script>
+    </body>
+   
+</html>
